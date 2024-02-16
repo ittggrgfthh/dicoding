@@ -13,11 +13,7 @@ class ApiService {
     final uri = Uri.parse(url);
     var request = http.MultipartRequest('POST', uri);
 
-    final multiPartFile = http.MultipartFile.fromBytes(
-      "photo",
-      bytes,
-      filename: fileName,
-    );
+    final multiPartFile = http.MultipartFile.fromBytes("photo", bytes, filename: fileName);
     final Map<String, String> fields = {
       "description": description,
     };
