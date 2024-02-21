@@ -108,6 +108,7 @@ class MyRouterDelegate extends RouterDelegate with ChangeNotifier, PopNavigatorR
 
   @override
   Widget build(BuildContext context) {
+    print(selectedStoryId);
     if (isLoggedIn == null) {
       historyStack = _splashStack;
     } else if (isLoggedIn == true) {
@@ -124,6 +125,7 @@ class MyRouterDelegate extends RouterDelegate with ChangeNotifier, PopNavigatorR
         if (!didPop) {
           return false;
         }
+        selectedStoryId = null;
         isForm = false;
         isRegister = false;
         notifyListeners();
